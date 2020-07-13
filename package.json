@@ -10,6 +10,7 @@
     "npm": "^6.14.6"
   },
   "devDependencies": {},
+      "nodemon": "~1.3.8",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
