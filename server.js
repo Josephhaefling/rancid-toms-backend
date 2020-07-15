@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+// const cors = require('cors')
+const { request, response } = require('express')
+fetch(request, { mode: 'cors' });
 
 app.set('port', process.env.PORT || 3001);
 app.locals.title = 'Rancid-Toms';
@@ -9,7 +12,7 @@ app.get('/', (request, response) => {
 });
 
 app.locals.comments = [
-    { id: 123456, author: 'Jessica', comment: 'this movie is the worst!!!!!' },
+    { movieId: 123456, author: 'Jessica', comment: 'this movie is the worst!!!!!' },
 ];
 
 app.locals.favorites = [
@@ -23,7 +26,7 @@ app.get('/comments', (request, response) => {
 
 app.get('/favorites', (request, response) => {
     const favorites = app.locals.favorites
-    response.send({ favorites });
+    response.json({ favorites });
 });
 
 app.listen(app.get('port'), () => {
