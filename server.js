@@ -7,7 +7,7 @@ app.set('port', process.env.PORT || 3001);
 app.locals.title = 'Rancid-Toms';
 
 app.get('/', (request, response) => {
-    response.send("Hi Alex");
+    response.send("Test nodemon");
 });
 
 app.locals.comments = {
