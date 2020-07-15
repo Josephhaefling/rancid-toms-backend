@@ -1,9 +1,10 @@
+const cors = require('cors');
+app.use(cors());
 const express = require('express');
 const app = express();
-// const cors = require('cors')
+const fetch = require("node-fetch");
 const { request, response } = require('express')
-fetch(request, { mode: 'cors' });
-
+fetch(request, {mode: 'cors'});
 app.set('port', process.env.PORT || 3001);
 app.locals.title = 'Rancid-Toms';
 
