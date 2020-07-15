@@ -1,10 +1,12 @@
+const cors = require('cors');
 const express = require('express');
 const cors = require('cors');
 const app = express();
 const { request, response } = require('express')
-
+fetch(request, {mode: 'cors'});
 app.set('port', process.env.PORT || 3001);
 app.locals.title = 'Rancid-Toms';
+app.use(cors());
 
 app.get('/', (request, response) => {
     response.send("Test nodemon");
@@ -71,7 +73,7 @@ app.post("/comments/:id", (request, response) => {
 
 app.get('/favorites', (request, response) => {
     const favorites = app.locals.favorites
-    response.send({ favorites });
+    response.json({ favorites });
 });
 
 app.listen(app.get('port'), () => {
